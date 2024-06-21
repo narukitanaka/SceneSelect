@@ -303,6 +303,9 @@
   color: #000;
   margin-bottom: 3rem;
 }
+.p-faq .qa-list .qa dd p a {
+  color: #CC0615;
+}
 .p-faq .qa-list .qa dd p:last-of-type {
   margin-bottom: 0;
 }
@@ -445,7 +448,7 @@
 @media screen and (max-width: 748px) {
   .p-guide .tab .tab_menu .tab_menu-item {
     font-size: 12px;
-    letter-spacing: 1px;
+    letter-spacing: 0px;
     padding: 6px;
   }
 }
@@ -496,6 +499,9 @@
     margin-bottom: 30px;
   }
 }
+.p-guide .tab .tab_panel .tab_panel-box p a {
+  color: #CC0615;
+}
 .p-guide .tab .tab_panel .tab_panel-box .flex {
   display: flex;
   justify-content: space-between;
@@ -508,7 +514,7 @@
 }
 .p-guide .tab .tab_panel .tab_panel-box .flex .box {
   width: 33.3333333333%;
-  max-width: 270px;
+  max-width: 280px;
   padding: 0 10px;
 }
 @media screen and (max-width: 748px) {
