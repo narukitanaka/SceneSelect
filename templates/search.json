@@ -1,0 +1,39 @@
+{
+  "sections": {
+    "item_list_mv_7ME89R": {
+      "type": "item-list-mv",
+      "settings": {
+      }
+    },
+    "main": {
+      "type": "main-search",
+      "custom_css": [
+        ".facet-checkbox {align-items: center;}",
+        ".facets-vertical-form {align-items: center;}",
+        ".product-count__text span {font-weight: 600;}",
+        ".facet-filters__sort {width: 200px; padding: 5px 17.5px; border: 1px solid #333; border-radius: 30px;}",
+        ".facet-filters__sort + .icon-caret {right: 17px;}"
+      ],
+      "settings": {
+        "columns_desktop": 3,
+        "image_ratio": "adapt",
+        "image_shape": "default",
+        "show_secondary_image": false,
+        "show_vendor": false,
+        "show_rating": false,
+        "enable_filtering": true,
+        "filter_type": "vertical",
+        "enable_sorting": true,
+        "article_show_date": true,
+        "article_show_author": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    }
+  },
+  "order": [
+    "item_list_mv_7ME89R",
+    "main"
+  ]
+}

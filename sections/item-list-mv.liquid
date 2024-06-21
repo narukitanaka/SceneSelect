@@ -1,0 +1,66 @@
+<style>
+  .item-list_mv {
+    position: relative;
+    height: 220px;
+    background: url(https://cdn.shopify.com/s/files/1/0590/1067/8863/files/mv_item-list.jpg?v=1715063449) no-repeat right/cover;
+    margin-top: 38px;
+    margin-bottom: 10px;
+  }
+  .item-list_mv::before {
+    position: absolute;
+    bottom: 0;
+    left: 0;
+    content: "";
+    width: 150px;
+    aspect-ratio: 1/.77;
+    background: url(https://cdn.shopify.com/s/files/1/0590/1067/8863/files/under-mv-icon.png?v=1717582364) no-repeat center/contain;
+  }
+  .item-list_mv .inner {
+    position: relative;
+  }
+  .item-list_mv h1 {
+    position: absolute;
+    top: 80px;
+    font-size: 26px;
+    font-weight: 600;
+    letter-spacing: 3px;
+    color: #fff;
+  }
+  .item-list_mv h1 span {
+    margin-right: 3rem;
+  }
+  @media screen and (max-width: 748px) {
+    .item-list_mv {
+      margin-top: 34px;
+    }
+    .item-list_mv h1 {
+      font-size: 20px;
+      line-height: 1.5;
+    }
+  }
+</style>
+<div class="item-list_mv">
+  <div class="inner">
+    {% if template == 'collection' %} 
+      <h1>‘ {{ collection.title }} ’</h1>
+    {% endif %}
+    {% if template == 'search' %} 
+      <h1><span>‘ {{ search.terms }} ’</span><br class="u-sp">と一致する動画</h1>
+    {% endif %}
+  </div><!-- /.inner -->
+  <div class="ashirai box01"></div>
+  <div class="ashirai box02"></div>
+  <div class="ashirai box03"></div>
+</div>
+
+
+{% schema %}
+  {
+    "name": "Mv-item-list",
+    "presets": [
+      {
+        "name": "Mv-item-list"
+      }
+    ]
+  }
+{% endschema %}

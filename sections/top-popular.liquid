@@ -1,0 +1,154 @@
+<style>
+  .top-popular {
+    padding: 8rem 0 8rem;
+  }
+  .top-popular .sub-ttl {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .top-popular h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .top-popular .popular-itemlist {
+    width: 100%;
+    aspect-ratio: 1/0.52;
+    display: grid;
+    grid-template-columns: repeat(15, 1fr);
+    grid-template-rows: repeat(5, 1fr);
+    grid-column-gap: 2.5rem;
+    grid-row-gap: 1.8rem;
+    margin-bottom: 7rem;
+  }
+  .top-popular .popular-itemlist .item {
+    height: 200;
+  }
+  .top-popular .popular-itemlist .item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 1.5rem;
+    overflow: hidden;
+  }
+  .top-popular .popular-itemlist .item:first-of-type {
+    grid-area: 1/1/3/6;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(2) {
+    grid-area: 1/6/3/11;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(3) {
+    grid-area: 1/11/3/16;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(4) {
+    grid-area: 3/1/4/4;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(5) {
+    grid-area: 3/4/4/7;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(6) {
+    grid-area: 3/7/4/10;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(7) {
+    grid-area: 3/10/4/13;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(8) {
+    grid-area: 3/13/4/16;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(9) {
+    grid-area: 4/1/6/6;
+  }
+  .top-popular .popular-itemlist .item:nth-of-type(10) {
+    grid-area: 4/6/6/11;
+  }
+  .top-popular .popular-itemlist .item:last-of-type {
+    grid-area: 4/11/6/16;
+  }
+  .top-popular .popular-itemlist .item img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+      object-fit: cover;
+    -o-object-position: center;
+      object-position: center;
+  }
+  @media screen and (max-width: 748px) {
+    .top-popular {
+      padding: 8rem 0 6rem;
+    }
+    .top-popular .sub-ttl {
+      font-size: 1.6rem;
+      gap: 1rem;
+    }
+    .top-popular h2 {
+      font-size: 2rem;
+      margin-bottom: 4rem;
+    }
+    .top-popular .popular-itemlist {
+      display: flex;
+      flex-wrap: wrap;
+      aspect-ratio: auto;
+      gap: .5rem;
+      margin-bottom: 5rem;
+    }
+    .top-popular .popular-itemlist .item {
+      /* width: 100%; */
+      width: calc((100% / 2) - (.5rem / 2));
+      aspect-ratio: 16/9;
+      border-radius: 1rem;
+    }
+  }
+</style>
+
+<div class="top-popular">
+  <div class="inner">
+    <p class="sub-ttl">
+      <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/logo-mark.svg" alt="">
+      Popular
+    </p>
+    <h2>人気の動画</h2>
+    <div class="popular-itemlist">
+
+      {% for product in collections.popularity.products limit: 11 %}
+        <div class="item img-box">
+          <a class="hov-thumb" href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'master' }}" alt="">
+          </a>
+        </div><!-- /.item -->
+      {% endfor %}
+
+      {% comment %} <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div> {% endcomment %}
+
+    </div><!-- /.popular-itemlist -->
+    <a class="btn01" href="/collections/all/">View more<img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/brn-arrow01.svg" alt=""></a>
+  </div><!-- /.inner -->
+</div><!-- /.top-popular -->
+
+{% schema %}
+  {
+    "name": "Top-Popular",
+    "presets": [
+      {
+        "name": "Top-Popular",
+        "category": "カスタム"
+      }
+    ]
+  }
+{% endschema %}

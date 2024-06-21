@@ -1,0 +1,119 @@
+<style>
+  .meta-info {
+    width: 100%;
+    margin-top: 40px;
+  }
+  .meta-info .heading-ttl {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 1px;
+    margin-bottom: 1.5rem;
+  }
+  .meta-info .heading-ttl img {
+    width: 22px;
+  }
+  .meta-info .row {
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid #CC0615;
+    padding: 1.5rem 0;
+  }
+  .meta-info .row:first-of-type {
+    border-top: 1px solid #CC0615;
+  }
+  .meta-info .row .box {
+    width: 33.3333333333%;
+  }
+  .meta-info .row .box p {
+    font-size: 14px;
+    font-weight: 500;
+    color: #231815;
+  }
+  .meta-info .row .box p:first-of-type {
+    font-size: 10px;
+    opacity: 0.6;
+    margin-bottom: 1rem;
+  }
+  @media screen and (max-width: 748px) {
+    .meta-info .row {
+      padding: 1rem 0;
+    }
+    .meta-info .row .box p:first-of-type {
+      margin-bottom: 5px;
+    }
+  }
+</style>
+
+<div class="meta-info">
+  <p class="heading-ttl">
+    <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/logo-mark.svg?v=1712903541" alt="">
+    動画詳細
+  </p>
+  <div class="meta-info_contents">
+    <div class="row">
+      {% if product.metafields.custom._direction != blank %}
+        <div class="box">
+          <p>向き</p>
+          <p>{{ product.metafields.custom._direction }}</p>
+        </div>
+      {% endif %}
+      {% if product.metafields.custom._aspect != blank %}
+        <div class="box">
+          <p>比率</p>
+          <p>{{ product.metafields.custom._aspect }}</p>
+        </div>
+      {% endif %}
+      {% if product.metafields.custom._length_detail != blank %}
+        <div class="box">
+          <p>長さ</p>
+          <p>{{ product.metafields.custom._length_detail }}</p>
+        </div>
+      {% endif %}
+    </div><!-- /.row -->
+    <div class="row">
+      {% if product.metafields.custom._people != blank %}
+        <div class="box">
+          <p>人物</p>
+          <p>{{ product.metafields.custom._people }}</p>
+        </div>
+      {% endif %}
+      {% if product.metafields.custom._filetype != blank %}
+        <div class="box">
+          <p>ファイル形式</p>
+          <p>{{ product.metafields.custom._filetype }}</p>
+        </div>
+      {% endif %}
+      {% if product.metafields.custom._filesize != blank %}
+        <div class="box">
+          <p>ファイルサイズ</p>
+          <p>{{ product.metafields.custom._filesize }}</p>
+        </div>
+      {% endif %}
+    </div><!-- /.row -->
+    <div class="row">
+      {% if product.metafields.custom._codec != blank %}
+        <div class="box">
+          <p>コーデック</p>
+          <p>{{ product.metafields.custom._codec }}</p>
+        </div>
+      {% endif %}
+      {% if product.metafields.custom._bitrate != blank %}
+        <div class="box">
+          <p>ビットレート</p>
+          <p>{{ product.metafields.custom._bitrate }}</p>
+        </div>
+      {% endif %}
+      {% if product.metafields.custom._framerate != blank %}
+        <div class="box">
+          <p>フレームレート</p>
+          <p>{{ product.metafields.custom._framerate }}</p>
+        </div>
+      {% endif %}
+    </div><!-- /.row -->
+  </div><!-- /.meta-info_contents -->
+</div>
+
+

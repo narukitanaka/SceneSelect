@@ -1,0 +1,102 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-product",
+      "blocks": {
+        "custom_liquid_GgWF67": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<p class=\"product-code\">動画素材番号：{{ product.handle }}<\/p>"
+          }
+        },
+        "title": {
+          "type": "title",
+          "settings": {
+          }
+        },
+        "variant_picker": {
+          "type": "variant_picker",
+          "settings": {
+            "picker_type": "button",
+            "swatch_shape": "circle"
+          }
+        },
+        "price": {
+          "type": "price",
+          "settings": {
+          }
+        },
+        "buy_buttons": {
+          "type": "buy_buttons",
+          "settings": {
+            "show_dynamic_checkout": false,
+            "show_gift_card_recipient": false
+          }
+        },
+        "custom_liquid_Lb7jGV": {
+          "type": "custom_liquid",
+          "settings": {
+            "custom_liquid": "<style>\n  .puroduct-sameday {\n    max-width: 500px;\n  }\n  .puroduct-sameday .heading-ttl {\n    display: flex;\n    align-items: center;\n    gap: 1rem;\n    font-size: 18px;\n    font-weight: 500;\n    margin-bottom: 35px;\n  }\n  @media screen and (max-width: 748px) {\n  .puroduct-sameday .heading-ttl {\n    margin-bottom: 25px;\n    letter-spacing: 0;\n  }\n}\n  .puroduct-sameday .heading-ttl span {\n    font-family: \"futura-pt\", sans-serif;\n    font-size: 16px;\n    font-weight: 400;\n  }\n  .puroduct-sameday .heading-ttl img {\n    width: 22px;\n  }\n  .puroduct-sameday .sameday-list {\n    display: flex;\n    flex-wrap: wrap;\n    gap: 25px;\n    margin-bottom: 40px;\n  }\n  @media screen and (max-width: 748px) {\n  .puroduct-sameday .sameday-list {\n    gap: 2rem;\n  }\n}\n  .puroduct-sameday .sameday-list .item {\n    width: calc(33.3333333333% - 16.6666666667px);\n    aspect-ratio: 16\/9;\n    background-color: #aaa;\n  }\n@media screen and (max-width: 748px) {\n  .puroduct-sameday .sameday-list .item {\n    width: calc(50% - 1rem);\n  }\n}\n  .puroduct-sameday .sameday-list .item a {\n    display: block;\n    width: 100%;\n    height: 100%;\n  }\n  .puroduct-sameday .sameday-list .item a img {\n    width: 100%;\n    height: 100%;\n    object-fit: cover;\n    object-position: center;\n  }\n  .puroduct-sameday .sameday-list .item a::before {\n    width: 4rem;\n  }\n<\/style>\n<script>\n  document.addEventListener(\"DOMContentLoaded\", function() {\n    \/\/ 初期表示アイテム数\n    let itemsToShow = 9;\n    const items = document.querySelectorAll('.item');\n    const totalItems = items.length;\n    let visibleItems = itemsToShow;\n\n    \/\/ 最初に表示するアイテム数を制御\n    items.forEach((item, index) => {\n        if (index < itemsToShow) {\n            item.style.display = 'block';\n        } else {\n            item.style.display = 'none';\n        }\n    });\n\n    \/\/ 全てのアイテムが初めから表示されている場合は、ボタンを非表示にする\n    if (totalItems <= itemsToShow) {\n        document.getElementById('load-more').style.display = 'none';\n    }\n\n    \/\/ 「さらに表示する」ボタンのクリックイベント\n    document.getElementById('load-more').addEventListener('click', function() {\n        \/\/ 次のitemsToShow個のアイテムを表示する\n        const nextToShow = visibleItems + itemsToShow;\n        for(let i = visibleItems; i < nextToShow; i++) {\n            if (i < totalItems) {\n                items[i].style.display = 'block';\n            }\n        }\n        visibleItems += itemsToShow;\n\n        \/\/ もし全てのアイテムが表示されたら、ボタンを隠す\n        if (visibleItems >= totalItems) {\n            document.getElementById('load-more').style.display = 'none';\n        }\n    });\n  });\n<\/script>\n<div class=\"puroduct-sameday\">\n  <p class=\"heading-ttl\">\n    <img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0590\/1067\/8863\/files\/logo-mark.svg?v=1712903541\" alt=\"\">\n    同日撮影の動画<span>Shooting on the same day<\/span>\n  <\/p>\n  <div class=\"sameday-list\">\n    {% assign product_collections = product.collections %}\n    {% assign collections_with_someday = '' %}\n\n    {% for collection in product_collections %}\n      {% if collection.handle contains 'someday' %}\n        {% assign collections_with_someday = collections_with_someday | append: collection.handle | append: ',' %}\n      {% endif %}\n    {% endfor %}\n\n    {% assign collections_array = collections_with_someday | split: ',' %}\n\n    {% for collection_handle in collections_array %}\n      {% if collection_handle != '' %}\n        {% assign collection = collections[collection_handle] %}\n        {% for collection_product in collection.products %}\n          {% unless collection_product.id == product.id %}\n            <div class=\"item img-box\">\n              <a class=\"hov-thumb\" href=\"{{ collection_product.url }}\">\n                <img src=\"{{ collection_product.featured_image | img_url: 'master' }}\" alt=\"\">\n              <\/a>\n            <\/div>\n          {% endunless %}\n        {% endfor %}\n      {% endif %}\n    {% endfor %}\n  <\/div><!-- \/.sameday-list -->\n  <button id=\"load-more\" class=\"btn01\">View more<img src=\"https:\/\/cdn.shopify.com\/s\/files\/1\/0590\/1067\/8863\/files\/brn-arrow01.svg\" alt=\"\"><\/button>\n<\/div><!-- \/.puroduct-sameday -->"
+          }
+        }
+      },
+      "block_order": [
+        "custom_liquid_GgWF67",
+        "title",
+        "variant_picker",
+        "price",
+        "buy_buttons",
+        "custom_liquid_Lb7jGV"
+      ],
+      "custom_css": [
+        ".product-code {font-size: 12px; opacity: 0.5;}",
+        ".product__title {margin-bottom: 25px;}",
+        "@media screen and (max-width: 748px) {.product__title {margin-top: 5px; margin-bottom: 10px; }}",
+        ".product__title h1 {font-size: 24px; font-weight: 500;}",
+        ".product-form__input--pill .form__label {display: none;}",
+        ".product-form__input--pill label {border-radius: 0;}",
+        ".price {font-size: 30px; font-family: \"futura-pt\", sans-serif;}",
+        ".product-form {position: relative; max-width: 280px; margin-bottom: 80px;}",
+        ".product-form__buttons button {background-color: #cc0615;}"
+      ],
+      "settings": {
+        "enable_sticky_info": true,
+        "color_scheme": "scheme-1",
+        "media_size": "medium",
+        "constrain_to_viewport": true,
+        "media_fit": "contain",
+        "gallery_layout": "thumbnail",
+        "media_position": "left",
+        "image_zoom": "none",
+        "mobile_thumbnails": "show",
+        "hide_variants": true,
+        "enable_video_looping": true,
+        "padding_top": 100,
+        "padding_bottom": 100
+      }
+    },
+    "related-products": {
+      "type": "related-products",
+      "disabled": true,
+      "settings": {
+        "heading": "You may also like",
+        "heading_size": "h2",
+        "products_to_show": 4,
+        "columns_desktop": 4,
+        "color_scheme": "scheme-1",
+        "image_ratio": "square",
+        "image_shape": "default",
+        "show_secondary_image": true,
+        "show_vendor": false,
+        "show_rating": false,
+        "columns_mobile": "2",
+        "padding_top": 36,
+        "padding_bottom": 28
+      }
+    }
+  },
+  "order": [
+    "main",
+    "related-products"
+  ]
+}

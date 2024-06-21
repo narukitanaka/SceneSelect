@@ -1,0 +1,114 @@
+<style>
+  .top-keywords {
+    padding: 6rem 0 8rem;
+  }
+  .top-keywords .sub-ttl {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .top-keywords h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 4rem;
+  }
+  .top-keywords .kw-list {
+    width: 75rem;
+    margin: 0 auto;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 3.5rem;
+    justify-content: center;
+  }
+  .top-keywords .kw-list a {
+    display: flex;
+    gap: 1.5rem;
+    align-items: center;
+    padding: 0.8rem 2rem;
+    border-radius: 5rem;
+    font-weight: 500;
+    line-height: 1;
+    color: #fff;
+    background-color: #231815;
+    text-decoration: none;
+  }
+  @media screen and (max-width: 1100px) {
+    .top-keywords .kw-list {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 748px) {
+    .top-keywords {
+      padding: 6rem 0;
+    }
+    .top-keywords .sub-ttl {
+      font-size: 1.6rem;
+      gap: 1rem;
+    }
+    .top-keywords h2 {
+      font-size: 2rem;
+    }
+    .top-keywords .kw-list {
+      width: 100%;
+      gap: 1.5rem;
+    }
+    .top-keywords .kw-list a {
+      font-size: 1.2rem;
+      gap: 1rem;
+    }
+  }
+</style>
+
+<div class="top-keywords">
+  <div class="inner">
+    <p class="sub-ttl">
+      <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/logo-mark.svg" alt="">
+      Hot Keyword
+    </p>
+    <h2>急上昇ワード</h2>
+
+    <div class="kw-list">
+      {% for block in section.blocks %}
+        <a class="btn-kw" href="/search?q={{ block.settings.keyword | url_encode }}">
+          <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-search02.svg" alt="">
+          {{ block.settings.keyword }}
+        </a>
+      {% endfor %}
+    </div><!-- /.kw-list -->
+
+  </div><!-- /.inner -->
+</div><!-- /.top-keywords -->
+
+
+{% schema %}
+  {
+    "name": "Top-KeywordList",
+    "blocks": [
+      {
+        "type": "Top-KeywordList",
+        "name": "キーワードボタン",
+        "settings": [
+          {
+            "type": "text",
+            "id": "keyword",
+            "label": "キーワード",
+            "default": "キーワード"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Top-KeywordList",
+        "category": "カスタム"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,412 @@
+<style>
+  .top-concept {
+    padding: 8rem 0 8rem;
+    background-color: #F6F4F4;
+  }
+  .top-concept .inner {
+    position: relative;
+  }
+  .top-concept .inner .ashirai {
+    width: 7.2rem;
+    height: 6.2rem;
+    background-color: rgba(204, 6, 21, 0.3);
+    position: absolute;
+  }
+  .top-concept .inner .ashirai.box01 {
+    top: -8rem;
+    right: 17.3rem;
+  }
+  .top-concept .inner .ashirai.box02 {
+    top: -2.2rem;
+    right: 24.5rem;
+  }
+  .top-concept .inner .ashirai.box03 {
+    top: 5.4rem;
+    right: 10rem;
+  }
+  .top-concept .inner .ashirai.box04 {
+    top: 11.6rem;
+    right: -7.2rem;
+  }
+  .top-concept .inner .ashirai.box05 {
+    top: 17.8rem;
+    right: 0;
+  }
+  .top-concept .inner .ashirai.box06 {
+    top: 24rem;
+    right: -14.4rem;
+  }
+  .top-concept .concept-txt {
+    font-size: 2.8rem;
+    font-weight: 600;
+    line-height: 1.8;
+    text-align: left;
+    margin-bottom: 8rem;
+  }
+  .top-concept .concept-txt span {
+    font-family: "futura-pt", sans-serif;
+    font-size: 3.4rem;
+    font-weight: 500;
+  }
+  .top-concept .block {
+    width: 100rem;
+    margin: 0 auto 8rem;
+    display: flex;
+    flex-wrap: wrap;
+    gap: 4rem;
+  }
+  .top-concept .block .box {
+    width: calc(50% - 2rem);
+    aspect-ratio: 1/0.31;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    gap: 3rem;
+    background-color: #fff;
+    border-radius: 5px;
+    border: 1px rgba(35, 24, 21, 0.2) solid;
+  }
+  .top-concept .block .box .rightbox {
+    max-width: 34rem;
+    display: flex;
+    gap: 1rem;
+    flex-direction: column;
+  }
+  .top-concept .block .box .rightbox h3 {
+    font-size: 2rem;
+    font-weight: 700;
+    margin: 0;
+  }
+  .top-concept .block .box .rightbox p {
+    font-size: 1.4rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    margin: 0;
+  }
+  .top-concept .sub-ttl {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .top-concept h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .top-concept .pricing-txt {
+    text-align: center;
+    font-size: 1.6rem;
+    font-weight: 600;
+    line-height: 2;
+    letter-spacing: 0;
+    margin-bottom: 4rem;
+  }
+  .top-concept .pricing-txt .red {
+    color: #CC0615;
+  }
+  .top-concept .pricing-txt .futura {
+    font-family: "futura-pt", sans-serif;
+  }
+  .top-concept .pricing-txt small {
+    font-size: 1.3rem;
+  }
+  .top-concept .block02 {
+    display: flex;
+    width: 100rem;
+    margin: 0 auto 8rem;
+  }
+  .top-concept .block02 .box {
+    width: 33.3333333333%;
+  }
+  .top-concept .block02 .box:not(:last-of-type) .price {
+    border-right: 1px solid #D3D1D0;
+  }
+  .top-concept .block02 .box p {
+    margin: 0;
+  }
+  .top-concept .block02 .box:first-of-type .ttl {
+    border-top-left-radius: 1rem;
+  }
+  .top-concept .block02 .box:last-of-type .ttl {
+    border-top-right-radius: 1rem;
+  }
+  .top-concept .block02 .box .ttl {
+    font-family: "futura-pt", sans-serif;
+    font-size: 2rem;
+    font-weight: 500;
+    text-align: center;
+    color: #fff;
+    padding: 0.7rem 0;
+    background-color: #231815;
+  }
+  .top-concept .block02 .box .price {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    font-family: "futura-pt", sans-serif;
+    font-size: 3.3rem;
+    font-weight: 500;
+    letter-spacing: 0;
+    color: #231815;
+    background-color: #fff;
+    height: 10rem;
+  }
+  .top-concept .block02 .box .price span {
+    font-family: "Zen Kaku Gothic New", sans-serif;
+    font-size: 2rem;
+  }
+  .top-concept .top-txt-slider .to-left {
+    white-space: nowrap;
+  }
+  .top-concept .top-txt-slider .to-left p {
+    display: inline-block;
+    font-family: "futura-pt", sans-serif;
+    font-size: 8rem;
+    font-weight: 600;
+    line-height: 1;
+    color: #CC0615;
+    margin: 0;
+    opacity: 0.3;
+  }
+  .top-concept .top-txt-slider .to-left p:first-of-type {
+    animation: loop-left 60s -30s linear infinite;
+  }
+  .top-concept .top-txt-slider .to-left p:last-of-type {
+    animation: loop-left2 60s linear infinite;
+  }
+  @keyframes loop-left {
+    0% {
+      transform: translateX(100%);
+    }
+    to {
+      transform: translateX(-100%);
+    }
+  }
+  @keyframes loop-left2 {
+    0% {
+      transform: translateX(0);
+    }
+    to {
+      transform: translateX(-200%);
+    }
+  }
+  @media screen and (max-width: 1100px) {
+    .top-concept .block,.top-concept .block02 {
+      width: 100%;
+    }
+    .top-concept .block .box {
+      gap: 2rem;
+    }
+  }
+  @media screen and (max-width: 748px) {
+    .top-concept {
+      padding: 8rem 0 6rem;
+    }
+    .top-concept .inner .ashirai {
+      width: 5rem;
+      height: auto;
+      aspect-ratio: 1/0.86;
+      z-index: 1;
+    }
+    .top-concept .inner .ashirai.box02 {
+      top: -3.7rem;
+      right: 22.3rem;
+    }
+    .top-concept .inner .ashirai.box03 {
+      top: 0.6rem;
+      right: 12.3rem;
+    }
+    .top-concept .inner .ashirai.box04 {
+      top: 4.9rem;
+      right: 1.3rem;
+    }
+    .top-concept .inner .ashirai.box05 {
+      top: 9.2rem;
+      right: 6.3rem;
+    }
+    .top-concept .inner .ashirai.box06 {
+      top: 13.5rem;
+      right: -4.3rem;
+    }
+    .top-concept .concept-txt {
+      position: relative;
+      font-size: 2rem;
+      margin-bottom: 4rem;
+      z-index: 2;
+    }
+    .top-concept .concept-txt span {
+      font-size: 4rem;
+    }
+    .top-concept .block {
+      width: 100%;
+      gap: 2rem;
+    }
+    .top-concept .block .box {
+      width: 100%;
+      flex-direction: column;
+      gap: 2rem;
+      padding: 2rem 1.5rem;
+    }
+    .top-concept .block02 .box:not(:last-of-type) .price {
+      border-right: none;
+    }
+    .top-concept .block .box .right h3 {
+      font-size: 1.6rem;
+      text-align: center;
+    }
+    .top-concept .block .box .right p {
+      text-align: center;
+    }
+    .top-concept .sub-ttl {
+      font-size: 1.6rem;
+      gap: 1rem;
+    }
+    .top-concept h2 {
+      font-size: 2rem;
+      margin-bottom: 4rem;
+    }
+    .top-concept .pricing-txt {
+      text-align: left;
+      line-height: 1.7;
+    }
+    .top-concept .pricing-txt .red {
+      display: block;
+      margin-top: 2rem;
+    }
+    .top-concept .block02 {
+      flex-direction: column;
+      gap: 1rem;
+      margin: 0 auto 6rem;
+    }
+    .top-concept .block02 .box {
+      width: 100%;
+    }
+    .top-concept .block02 .box .ttl {
+      border-top-left-radius: 1rem;
+      border-top-right-radius: 1rem;
+    }
+  }
+</style>
+
+<div class="top-concept">
+  <div class="inner">
+    <div class="ashirai box01"></div>
+    <div class="ashirai box02"></div>
+    <div class="ashirai box03"></div>
+    <div class="ashirai box04"></div>
+    <div class="ashirai box05"></div>
+    <div class="ashirai box06"></div>
+    <h2 class="concept-txt">
+      プロフェッショナルな映像を手頃な料金で<br>
+      あなたのプロジェクトに最適な<br>
+      <span>Scene</span> を <span>Select</span>
+    </h2>
+    <div class="block">
+      <div class="box">
+        <div class="leftbox"><img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-concept01.svg" alt=""></div>
+        <div class="rightbox">
+          <h3>同日撮影素材は、割引価格で</h3>
+          <p>
+            同じ日やロケーションで撮影された映像素材が、特別な割引価格でお求めいただけます。
+          </p>
+        </div>
+      </div><!-- /.box -->
+      <div class="box">
+        <div class="leftbox"><img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-concept02.svg" alt=""></div>
+        <div class="rightbox">
+          <h3>純日本製の信頼性</h3>
+          <p>
+            すべてのコンテンツは100%日本製。<br>
+            日本国内のプロフェッショナルによる確かな品質を、<br>
+            安心してお使いいただけます。
+          </p>
+        </div>
+      </div><!-- /.box -->
+      <div class="box">
+        <div class="leftbox"><img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-concept03.svg" alt=""></div>
+        <div class="rightbox">
+          <h3>商用利用も安心のライセンス</h3>
+          <p>
+            提供する全ての映像は商用利用可能なライセンス付き。あなたのビジネスやプロジェクトに自由にお使いいただけます。
+          </p>
+        </div>
+      </div><!-- /.box -->
+      <div class="box">
+        <div class="leftbox"><img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-concept04.svg" alt=""></div>
+        <div class="rightbox">
+          <h3>いつでも再ダウンロード自由</h3>
+          <p>
+            購入したコンテンツは無期限で再ダウンロード可能。<br>
+            どこにいても、いつでも必要な時にアクセスできます。
+          </p>
+        </div>
+      </div><!-- /.box -->
+    </div><!-- /.block -->
+    <p class="sub-ttl">
+      <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/logo-mark.svg" alt="">
+      Pricing
+    </p>
+    <h2>価格設定</h2>
+    <p class="pricing-txt">
+      Scene Select では、映像1本あたりの明瞭な価格設定で、サブスクリプションフリーの買い切りモデルを採用しています <br>
+      あなたのニーズに合わせて、必要なコンテンツのみを購入可能です<br>
+      <span class="red">また、同日撮影の素材をセットで購入すると、割引額 <span class="futura">2,000</span><small>円〜</small>でさらにお得に</span>
+    </p>
+    <div class="block02">
+      <div class="box">
+        <p class="ttl">Full HD</p>
+        <p class="price">{{ section.settings.price01 }}<span>円〜</span></p>
+      </div>
+      <div class="box">
+        <p class="ttl">4K</p>
+        <p class="price">{{ section.settings.price02 }}<span>円〜</span></p>
+      </div>
+      <div class="box">
+        <p class="ttl">Animation/effect</p>
+        <p class="price">{{ section.settings.price03 }}<span>円〜</span></p>
+      </div>
+    </div><!-- /.block02-->
+  </div><!-- /.inner -->
+  <div class="top-txt-slider">
+    <div class="to-left">
+      <p>Scene Select is your partner in supporting your creativity.　</p>
+      <p>Scene Select is your partner in supporting your creativity.</p>
+    </div>
+  </div>
+</div><!-- /.top-concept -->
+
+{% schema %}
+  {
+    "name": "Top-Concept",
+    "settings": [
+      {
+        "type": "text" ,
+        "id": "price01" ,
+        "label": "Full HDの価格" 
+      },
+      {
+        "type": "text" ,
+        "id": "price02" ,
+        "label": "4Kの価格" 
+      },
+      {
+        "type": "text" ,
+        "id": "price03" ,
+        "label": "Animation/effectの価格" 
+      }
+    ] ,
+    "presets": [
+      {
+        "name": "Top-Concept",
+        "category": "カスタム"
+      }
+    ]
+  }
+{% endschema %}

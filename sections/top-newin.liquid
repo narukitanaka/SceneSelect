@@ -1,0 +1,125 @@
+<style>
+  .top-newin {
+    padding: 6rem 0 8rem;
+  }
+  .top-newin .sub-ttl {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .top-newin h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .top-newin .new-itemlist {
+    display: grid;
+    grid-template-columns: repeat(4, 1fr); /* 4列 */
+    grid-template-rows: repeat(3, 1fr); /* 3行 */
+    gap: 2.5rem;
+    margin-bottom: 6rem;
+  }
+  .top-newin .new-itemlist .item {
+    height: 15.8rem;
+  }
+  .top-newin .new-itemlist .item:first-of-type {
+    height: 34.1rem;
+    grid-column: span 2; /* 2列分を占める */
+    grid-row: span 2; /* 2行分を占める */
+  }
+  .top-newin .new-itemlist .item a {
+    display: block;
+    width: 100%;
+    height: 100%;
+    border-radius: 15px;
+    overflow: hidden;
+  }
+  .top-newin .new-itemlist .item img {
+    width: 100%;
+    height: 100%;
+    -o-object-fit: cover;
+      object-fit: cover;
+    -o-object-position: center;
+      object-position: center;
+  }
+  @media screen and (max-width: 748px) {
+    .top-newin {
+      padding: 4rem 0 6rem;
+    }
+    .top-newin .sub-ttl {
+      font-size: 1.6rem;
+      gap: 0.5rem;
+    }
+    .top-newin h2 {
+      font-size: 2rem;
+      margin-bottom: 4rem;
+    }
+    .top-newin .new-itemlist {
+      display: flex;
+      flex-wrap: wrap;
+      gap: 0.5rem;
+      margin-bottom: 5rem;
+    }
+    .top-newin .new-itemlist .item {
+      width: calc(50% - 0.25rem);
+      height: auto;
+      border-radius: 5px;
+      aspect-ratio: 16/9;
+    }
+    .top-newin .new-itemlist .item:first-of-type {
+      height: auto;
+      aspect-ratio: 16/9;
+    }
+  }
+</style>
+<div class="top-newin">
+  <div class="inner">
+    <p class="sub-ttl">
+      <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/logo-mark.svg" alt="">
+      New in
+    </p>
+    <h2>新着動画</h2>
+    <div class="new-itemlist">
+
+      {% for product in collections.new.products limit: 9 %}
+        <div class="item img-box">
+          <a class="hov-thumb" href="{{ product.url }}">
+            <img src="{{ product.featured_image | img_url: 'master' }}" alt="">
+          </a>
+        </div><!-- /.item -->
+      {% endfor %}
+      {% comment %} <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
+      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div> {% endcomment %}
+
+    </div><!-- /.new-itemlist -->
+    <a class="btn01" href="/collections/all/">View more<img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/brn-arrow01.svg" alt=""></a>
+  </div><!-- /.inner -->
+</div><!-- /.top-newin -->
+
+
+{% schema %}
+  {
+    "name": "Top-Newin",
+    "presets": [
+      {
+        "name": "Top-Newin",
+        "category": "カスタム"
+      }
+    ]
+  }
+{% endschema %}
+
+

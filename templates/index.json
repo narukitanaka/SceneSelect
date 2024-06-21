@@ -1,0 +1,103 @@
+{
+  "sections": {
+    "top_mv_wLyYb4": {
+      "type": "top-mv",
+      "settings": {
+        "mv-video": "shopify:\/\/files\/videos\/mv.mp4"
+      }
+    },
+    "top_keywords_3M69Tf": {
+      "type": "top-keywords",
+      "blocks": {
+        "top_keyword_list_Eea8FJ": {
+          "type": "Top-KeywordList",
+          "settings": {
+            "keyword": "美容"
+          }
+        },
+        "top_keyword_list_mcC8dB": {
+          "type": "Top-KeywordList",
+          "settings": {
+            "keyword": "学校"
+          }
+        },
+        "top_keyword_list_b4CkGw": {
+          "type": "Top-KeywordList",
+          "settings": {
+            "keyword": "機械"
+          }
+        },
+        "top_keyword_list_BgXUry": {
+          "type": "Top-KeywordList",
+          "settings": {
+            "keyword": "動画素材"
+          }
+        }
+      },
+      "block_order": [
+        "top_keyword_list_Eea8FJ",
+        "top_keyword_list_mcC8dB",
+        "top_keyword_list_b4CkGw",
+        "top_keyword_list_BgXUry"
+      ],
+      "settings": {
+      }
+    },
+    "top_newin_gWbniC": {
+      "type": "top-newin",
+      "settings": {
+      }
+    },
+    "top_concept_wwgU3a": {
+      "type": "top-concept",
+      "settings": {
+        "price01": "5,000",
+        "price02": "6,000",
+        "price03": "4,000"
+      }
+    },
+    "top_popular_JpbEWd": {
+      "type": "top-popular",
+      "settings": {
+      }
+    },
+    "top_categorylist_KaLAbp": {
+      "type": "top-categorylist",
+      "blocks": {
+        "top_cate_block_aqUWkK": {
+          "type": "top-cate_block",
+          "settings": {
+            "top-cate": "shool"
+          }
+        },
+        "top_cate_block_zJRWKf": {
+          "type": "top-cate_block",
+          "settings": {
+            "top-cate": "machine"
+          }
+        },
+        "top_cate_block_Dzpe8C": {
+          "type": "top-cate_block",
+          "settings": {
+            "top-cate": "beauty"
+          }
+        }
+      },
+      "block_order": [
+        "top_cate_block_aqUWkK",
+        "top_cate_block_zJRWKf",
+        "top_cate_block_Dzpe8C"
+      ],
+      "settings": {
+      }
+    }
+  },
+  "order": [
+    "top_mv_wLyYb4",
+    "top_keywords_3M69Tf",
+    "top_newin_gWbniC",
+    "top_concept_wwgU3a",
+    "top_popular_JpbEWd",
+    "top_categorylist_KaLAbp"
+  ]
+}

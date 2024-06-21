@@ -1,0 +1,142 @@
+<style>
+  .top-category {
+    padding: 8rem 0 8rem;
+  }
+  .top-category .sub-ttl {
+    display: flex;
+    gap: 2rem;
+    align-items: center;
+    justify-content: center;
+    font-family: "futura-pt", sans-serif;
+    font-size: 1.8rem;
+    font-weight: 400;
+    font-style: italic;
+    margin-bottom: 1.5rem;
+  }
+  .top-category h2 {
+    font-size: 2.6rem;
+    font-weight: 600;
+    text-align: center;
+    margin-bottom: 5rem;
+  }
+  .top-category .category-list {
+    width: 100%;
+    display: flex;
+    flex-wrap: wrap;
+    row-gap: 2rem;
+    -moz-column-gap: 5.6rem;
+        column-gap: 5.6rem;
+  }
+  .top-category .category-list .box a {
+    display: flex;
+    align-items: center;
+    gap: 2rem;
+    transition: all 0.5s;
+  }
+  /* .top-category .category-list .box a:hover img {
+    border: 1px solid #CC0615;
+  } */
+  .top-category .category-list .box a:hover p {
+    color: #CC0615;
+  }
+  .top-category .category-list .box a {
+    text-decoration: none;
+  }
+  .top-category .category-list .box a img {
+    width: 6rem;
+    aspect-ratio: 1/1;
+    height: 100%;
+    -o-object-fit: cover;
+      object-fit: cover;
+    -o-object-position: center;
+      object-position: center;
+    overflow: hidden;
+    border: 1px solid transparent;
+    background-color: #ccc;
+    border-radius: 50%;
+    transition: all 0.5s;
+  }
+  .top-category .category-list .box a p {
+    font-size: 1.8rem;
+    letter-spacing: 0;
+    font-weight: 600;
+    color: #000;
+    transition: all 0.5s;
+  }
+  @media screen and (max-width: 748px) {
+    .top-category {
+      padding: 4rem 0 6rem;
+    }
+    .top-category .sub-ttl {
+      font-size: 1.6rem;
+      gap: 1.6rem;
+    }
+    .top-category h2 {
+      font-size: 2rem;
+      margin-bottom: 4rem;
+    }
+    .top-category .category-list {
+      -moz-column-gap: 3rem;
+          column-gap: 3rem;
+    }
+    .top-category .category-list .box a {
+      gap: 1rem;
+    }
+    .top-category .category-list .box a img {
+      width: 4rem;
+    }
+    .top-category .category-list .box a p {
+      font-size: 1.5rem;
+    }
+  }
+</style>
+
+<div class="top-category">
+  <div class="inner">
+    <p class="sub-ttl">
+      <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/logo-mark.svg" alt="">
+      Category
+    </p>
+    <h2>カテゴリーから探す</h2>
+    <div class="category-list">
+
+      {% for top-cate_block in section.blocks %}
+          {% if top-cate_block.type == 'top-cate_block' %}
+            <div class="box">
+              <a href="{{ top-cate_block.settings.top-cate.url }}">
+                <img src="{{ top-cate_block.settings.top-cate.featured_image.src | img_url: 'master' }}" alt="">
+                <p>{{ top-cate_block.settings.top-cate.title }}</p>
+              </a>
+            </div>
+        {% endif %}
+      {% endfor %} 
+      
+    </div><!-- /.category-list -->
+  </div><!-- /.inner -->
+</div><!-- /.top-category -->
+
+
+{% schema %}
+  {
+    "name": "Top-CategoryList",
+    "blocks": [
+      {
+        "type": "top-cate_block",
+        "name": "カテゴリー",
+        "settings": [
+          {
+            "type": "collection",
+            "id": "top-cate",
+            "label": "カテゴリーを選択"
+          }
+        ]
+      }
+    ],
+    "presets": [
+      {
+        "name": "Top-CategoryList",
+        "category": "カスタム"
+      }
+    ]
+  }
+{% endschema %}

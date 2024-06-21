@@ -1,0 +1,93 @@
+<style>
+  .mv {
+  position: relative;
+  width: 100vw;
+  aspect-ratio: 1/0.56;
+  }
+  .mv video {
+    width: 100%;
+    height: 100%;
+  }
+  .mv .mv-search {
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    transform: translate(-50%, -50%);
+  }
+  .mv .mv-search .search-inner {
+    border: 1px solid #333;
+    display: inline-flex;
+    align-items: center;
+    width: 80rem;
+    background-color: #fff;
+    border-radius: 5rem;
+    overflow: hidden;
+  }
+  .mv .mv-search .search-inner input[type=text] {
+    width: 100%;
+    font-size: 1.6rem;
+    font-weight: 600;
+    padding: 1.5rem 2.5rem;
+    border: none;
+  }
+  .mv .mv-search .search-inner .icon-search {
+    padding-right: 2.2rem;
+  }
+  @media screen and (max-width: 1100px) {
+    .mv .mv-search {
+      width: 90%;
+      max-width: 750px;
+    }
+    .mv .mv-search .search-inner {
+      width: 100%;
+    }
+  }
+  @media screen and (max-width: 748px) {
+    .mv {
+      aspect-ratio: 1/1;
+      margin-top: 8vw;
+    }
+    .mv video {
+      -o-object-fit: cover;
+        object-fit: cover;
+    }
+    .mv .mv-search {
+      width: 90%;
+    }
+    .mv .mv-search .search-inner {
+      width: 100%;
+    }
+    
+  }
+</style>
+<div class="mv">
+  {% comment %} <video src="https://cdn.shopify.com/videos/c/o/v/1ee63c4e36144a0b897695a09b327042.mp4" autoplay muted loop></video> {% endcomment %}
+  {{ section.settings.mv-video | video_tag: loop: true, autoplay: true, muted: true }}
+  <div class="mv-search">
+    <form method="get" action="/search">
+      <div class="search-inner">
+        <input type="text" name="q" placeholder="キーワードを入力">
+        <input type="hidden" name="type" value="puroduct">
+        <input type="image" src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-search.svg" alt="検索" class="icon-search">
+      </div>
+    </form>
+  </div><!-- /.mv-search -->
+</div><!-- /.mv -->
+
+{% schema %}
+  {
+    "name": "Top-FirstView",
+    "settings": [
+        {
+            "type": "video",
+            "id": "mv-video",
+            "label": "Fv動画"
+        }
+    ],
+    "presets": [
+      {
+        "name": "Top-FirstView"
+      }
+    ]
+  }
+{% endschema %}

@@ -1,0 +1,44 @@
+{
+  "sections": {
+    "main": {
+      "type": "main-account",
+      "settings": {
+        "padding_top": 36,
+        "padding_bottom": 36
+      }
+    },
+    "1717385308e2540fc3": {
+      "type": "apps",
+      "blocks": {
+        "sky_pilot_digital_downloads_customer_digital_library_button_FD68Cy": {
+          "type": "shopify:\/\/apps\/sky-pilot-digital-downloads\/blocks\/customer_digital_library_button\/d19e6703-9148-4c06-b38c-b4d4f4a42811",
+          "settings": {
+            "button_label": "Video Library",
+            "justification": "left",
+            "hide_if_no_downloads": true,
+            "css_classes": "btn button button--primary",
+            "custom_css": "margin: 20px auto 60px;"
+          }
+        }
+      },
+      "block_order": [
+        "sky_pilot_digital_downloads_customer_digital_library_button_FD68Cy"
+      ],
+      "settings": {
+        "include_margins": true
+      }
+    },
+    "wishlist": {
+      "type": "wishlist",
+      "settings": {
+        "text": "お気に入り追加されていません",
+        "shopping": "商品一覧へ"
+      }
+    }
+  },
+  "order": [
+    "main",
+    "1717385308e2540fc3",
+    "wishlist"
+  ]
+}
