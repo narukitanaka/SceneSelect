@@ -108,6 +108,9 @@
   }
 </style>
 
+
+
+{% if collections['popularity'].products_count >= 11 %}
 <div class="top-popular">
   <div class="inner">
     <p class="sub-ttl">
@@ -125,21 +128,13 @@
         </div><!-- /.item -->
       {% endfor %}
 
-      {% comment %} <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div>
-      <div class="item img-box hov-thumb"><a href="#"><img src="#" alt=""></a></div> {% endcomment %}
-
     </div><!-- /.popular-itemlist -->
     <a class="btn01" href="/collections/all/">View more<img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/brn-arrow01.svg" alt=""></a>
   </div><!-- /.inner -->
 </div><!-- /.top-popular -->
+
+{% endif %}
+
 
 {% schema %}
   {

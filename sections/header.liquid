@@ -567,7 +567,11 @@
             <a href="/account/">
               <img src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-mypage.svg?v=1715043147" alt="">
               <img class="is-hum" src="https://cdn.shopify.com/s/files/1/0590/1067/8863/files/icon-mypage02.svg?v=1715048773" alt="">
-              マイページ
+              {% if customer %}
+                マイページ
+              {% else %}
+                ログイン
+              {% endif %}
             </a>
           </li>
         </ul>
